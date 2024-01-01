@@ -2,6 +2,47 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.hidden{
+  opacity: 0;
+  transition: all 1s;
+}
+
+
+.show{
+  opacity: 1;         
+}
+
+
+.left-to-right-before{
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+  transform: translateX(-100%);
+}
+
+
+.left-to-right-after{
+  opacity: 1;         
+  filter: blur(0);
+  transform: translateX(100);
+}
+
+
+.right-to-left-before{
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+  transform: translateX(100%);
+}
+
+.right-to-left-after{
+  opacity: 1;         
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+
 /*CSS for nav bar*/
 .logo {
   margin-left: 30px;
@@ -1010,6 +1051,7 @@ body {
     padding: 0px;
     margin-top: 5vh;
   }
+
   .tech-image1 {
     background: url("/assets/technology/image-launch-vehicle-portrait.jpg");
     width: 515px;
