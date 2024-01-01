@@ -132,3 +132,26 @@ if(isIndexOpen){
         techImg.setAttribute("src", "./assets/technology/image-space-capsule-portrait.jpg")
     } 
 }
+
+let observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show")
+            entry.target.classList.add("left-to-right-after")
+            entry.target.classList.add("right-to-left-after")
+        }else{
+            entry.target.classList.remove("show")
+            entry.target.classList.remove("left-to-right-after")
+            entry.target.classList.remove("right-to-left-after")
+
+        }
+    })
+})
+
+
+let hiddenElements = document.querySelectorAll(".hidden")
+let leftToRight = document.querySelectorAll(".left-to-right-before")
+let rightToLeft = document.querySelectorAll(".right-to-left-before")
+hiddenElements.forEach((e1) => observer.observe(e1))
+leftToRight.forEach((e1) => observer.observe(e1))
+rightToLeft.forEach((e1) => observer.observe(e1))
